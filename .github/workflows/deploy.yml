@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [master]  # or your default branch
+    branches: [master]  # Trigger on push to master
 
 permissions:
   contents: write
@@ -30,9 +30,10 @@ jobs:
         run: npm run build
         working-directory: ./react/react-app
 
-      - name: Deploy to GitHub Pages under subfolder
+      - name: Deploy to GitHub Pages with hard reset
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./react/react-app/dist
-          destination_dir: react/react-app/dist  # 👈 This puts the build inside this folder in gh-pages branch
+          destination_dir: react/react-app/
+          force_orphan: true  
