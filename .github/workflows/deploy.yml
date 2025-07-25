@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [gh-pages]  # Usually, you'd want to trigger this on `main` or `master` instead
+    branches: [master]  # Usually, you'd want to trigger this on `main` or `master` instead
   pull_request:
     branches: [master]
 
