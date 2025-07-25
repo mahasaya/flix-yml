@@ -2,9 +2,12 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [master]  # Usually, you'd want to trigger this on `main` or `master` instead
-  pull_request:
-    branches: [master]
+    branches: [main]  # or 'master' if that’s your default
+
+permissions:
+  contents: write     # ✅ required for actions/gh-pages
+  pages: write
+  id-token: write
 
 jobs:
   build-and-deploy:
@@ -27,7 +30,7 @@ jobs:
         run: npm run build
         working-directory: ./react/react-app
 
-      - name: Deploy to gh-pages
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
