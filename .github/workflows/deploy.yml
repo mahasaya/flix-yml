@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [master]  # Trigger on push to master
+    branches: [master]
 
 permissions:
   contents: write
@@ -30,10 +30,18 @@ jobs:
         run: npm run build
         working-directory: ./react/react-app
 
+      - name: Move 404.html to root if exists
+        run: |
+          mkdir -p temp-deploy/react/react-app
+          cp -r react/react-app/dist/* temp-deploy/react/react-app/
+          if [ -f temp-deploy/react/react-app/404.html ]; then
+            cp temp-deploy/react/react-app/404.html temp-deploy/404.html
+          fi
+
       - name: Deploy to GitHub Pages with hard reset
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./react/react-app/dist
-          destination_dir: react/react-app/
-          force_orphan: true  
+          publish_dir: ./temp-deploy
+          destination_dir: .
+          force_orphan: true
