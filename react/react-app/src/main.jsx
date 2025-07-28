@@ -15,7 +15,7 @@ const store = configureStore({
 
 createRoot(document.getElementById("root")).render(
   <Provider store={store}>
-    <BrowserRouter basename="/react/react-app/" >
+    <BrowserRouter basename="/react/react-app" >
       <App />
     </BrowserRouter>
   </Provider>
