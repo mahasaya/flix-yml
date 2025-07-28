@@ -13,7 +13,6 @@ import TV from "./pages/TV";
 import Computing from "./pages/Computing";
 import Footer from "./Components/Common/Footer";
 import Products from "./Components/Common/Products";
-import ScrollToTop from "./assets/ScollTop";
 
 function App() {
   const location = useLocation();
