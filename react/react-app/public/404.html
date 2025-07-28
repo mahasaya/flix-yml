@@ -13,8 +13,7 @@
         window.location.pathname +
         window.location.search +
         window.location.hash;
-        console.log("404 html ran")
-      const newUrl = "/" + "flix-yml/react/react-app/" + "?" + "redirect=" + encodeURIComponent(redirectPath);
+      const newUrl = "/?" + "redirect=" + encodeURIComponent(redirectPath);
       window.location.replace(newUrl);
     </script>
   </body>
