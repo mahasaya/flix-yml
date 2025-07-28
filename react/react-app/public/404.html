@@ -10,10 +10,10 @@
     </p>
     <script>
       const redirectPath =
-        window.location.pathname.replace(/^\/flix-yml\/react\/react-app/, "/") +
+        window.location.pathname.replace(/^\/flix-yml\/react\/react-app/, "")  +
         window.location.search +
         window.location.hash;
-      const newUrl = "/flix-yml/react/react-app" + redirectPath;
+      const newUrl = "/flix-yml/react/react-app/" + "?" + "redirect=" + encodeURIComponent(redirectPath);
       window.location.replace(newUrl);
     </script>
   </body>
