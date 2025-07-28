@@ -28,6 +28,7 @@ function App() {
     if (redirect) {
       const decodedPath = decodeURIComponent(redirect);
       window.history.replaceState(null, '', decodedPath); // now valid
+      console.log("navigation ran ")
       navigate(decodedPath, { replace: true });
     }
   }, []);
