@@ -6,7 +6,7 @@ import NavBar from "./Components/Common/NavBar";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Cart from "./pages/Cart";
-import Kitchen from "./pages/kitchen";
+import Kitchen from "./pages/Kitchen";
 import SmallAppliance from "./pages/SmallAppliance";
 import Phones from "./pages/Phones";
 import TV from "./pages/TV";
