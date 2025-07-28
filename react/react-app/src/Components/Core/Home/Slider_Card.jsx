@@ -1,7 +1,7 @@
 // Slider_Card.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import FlixParamsModal from "../../Common/flixParamsModal";
+import FlixParamsModal from "../../Common/FlixParamsModal";
 
 const Slider_Card = ({ SliderData, width, height }) => {
   const [isOpen, setIsOpen] = useState(false);

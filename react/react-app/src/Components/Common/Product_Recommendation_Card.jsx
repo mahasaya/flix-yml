@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
-import FlixParamsModal from "./flixParamsModal";
+import FlixParamsModal from "./FlixParamsModal";
 
 const Product_Recommendation_Card = ({ SliderData, width, height }) => {
   const [isOpen, setIsOpen] = useState(false);
