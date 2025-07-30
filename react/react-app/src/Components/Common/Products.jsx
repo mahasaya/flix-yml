@@ -31,10 +31,11 @@ const Products = () => {
     miniRef.current?.focus();
     miniRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
   };
-//   useEffect(() => {
-//     console.log("this ran simple key")
-//   setEmbedKey(prev => prev + 1);
-// }, [location.search]); 
+  useEffect(() => {
+   if (flixInpageRef.current.hasChildNodes()) {
+  console.log("Has child nodes");
+}
+}, []); 
 
   useEffect(() => {
     if (showFlixDiv) {
@@ -70,13 +71,13 @@ useEffect(() => {
     flixInpageRef.current.innerHTML = "";
   }
 
-  if (flixInpageRef.current && !flixInpageRef.current.children.length) {
+  if (flixInpageRef.current && !flixInpageRef?.current?.children.length ) {
     if (distributor === "2298") {
       const blockDiv = document.createElement("div");
       blockDiv.id = "flix-embed-block";
       blockDiv.style.outline = "none";
       blockDiv.className = "flix_retailer_width_2298";
-      if (miniRef.current) blockDiv.appendChild(miniRef.current);
+      if (miniRef.current) blockDiv.appendChild(miniRef.current) ;
 
       [
         "review_stars",
@@ -255,33 +256,20 @@ useEffect(() => {
         >
           { distributor === "2298" ? (
             <div
-              id="flix-embed-block"
               ref={miniRef}
-              style={{ outline: "none" }}
-              className="flix_retailer_width_2298"
             >
-              <div data-flix-embed-meta="review_stars"></div>
-              <div data-flix-embed-meta="product_info"></div>
-              <div data-flix-embed-meta="main_video"></div>
-              <div data-flix-embed-meta="videos"></div>
-              <div data-flix-embed-meta="360view"></div>
-              <div data-flix-embed-meta="images"></div>
-              <div data-flix-embed-meta="features"></div>
-              <div data-flix-embed-meta="specifications"></div>
-              <div data-flix-embed-meta="documents"></div>
-              <div data-flix-embed-meta="reviews"></div>
-              <div data-flix-embed-meta="complimentary"></div>
+
             </div>
           ) : (
-            <>
+            <div ref={miniRef}>
               <div id="flix-minisite"></div>
               <div
-                ref={miniRef}
+                
                 style={{ outline: "none" }}
                 tabIndex={-1}
                 id="flix-inpage"
               ></div>
-            </>
+            </div>
           )}
         </div>
       </div>
