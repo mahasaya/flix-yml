@@ -11,6 +11,7 @@ const Home = () => {
         SliderData={SliderProductData}
         Card={Slider_Card}
       />
+      <h>hi</h>
       <ShopByCategory/>
     </div>
   )
